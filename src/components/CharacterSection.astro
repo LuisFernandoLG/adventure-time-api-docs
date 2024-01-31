@@ -1,0 +1,22 @@
+---
+import { characterService } from "../services/api/characterService";
+import CharacterCard from "./CharacterCard.astro";
+
+const characters = await characterService().getManyById([1, 2, 3, 4, 5, 6]);
+---
+
+<h2 class="text-4xl text-center font-bold text-white mt-10 mb-5">Characters</h2>
+<section class="grid grid-cols-6 gap-8 max-w-[1000px] mx-auto">
+  {
+    characters.map((character) => (
+      <CharacterCard
+        name={character.name}
+        full_name={character.full_name}
+        id={character.id}
+        image={character.image}
+        kingdomId={character.kingdom.id}
+        kingdomName={character.kingdom.name}
+      />
+    ))
+  }
+</section>

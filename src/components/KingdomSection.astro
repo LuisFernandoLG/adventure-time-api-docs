@@ -1,0 +1,22 @@
+---
+import { baseEndpoint } from "../constants/api";
+import { kingdomService } from "../services/api/kingdomService";
+import KingdomCard from "./KingdomCard.astro";
+
+
+const kingdoms = await kingdomService().getManyById([1,2,3,4])
+
+---
+    <h2 class="text-4xl text-center font-bold text-white mt-20 mb-5">
+      Kingdoms
+    </h2>
+
+    <ul class="grid grid-cols-6 gap-8 max-w-[1000px] mx-auto">
+      {
+        kingdoms.map((kingdom) => {
+          return (
+          <KingdomCard name={kingdom.name} image={kingdom.thumbnail} characters={kingdom.characters} />
+          );
+        })
+      }
+    </ul>

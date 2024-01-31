@@ -1,0 +1,49 @@
+---
+import { baseEndpoint } from "../constants/api";
+import type { Character } from "../types/Character";
+import Avatar from "./Avatar.astro";
+
+interface Props {
+  image: string;
+  name: string;
+  description: string;
+  characters: Character[];
+}
+
+const { image, name, characters, description } = Astro.props;
+---
+
+<li
+  class="col-span-3 flex flex-col gap-3 rounded-xl overflow-hidden bg-gray-700 shadow-sm"
+>
+  <div class="aspect-video relative">
+    <img src={image} alt={name} />
+    <div
+      class="w-full h-full bottom-0 absolute"
+      style="
+background: linear-gradient(177deg, transparent 0%, rgba(0, 0, 0, 0.48) 90%);"
+    >
+    </div>
+    <a
+      class="absolute bottom-5 left-5 text-white text-nowrap text-ellipsis text-2xl font-black hover:underline"
+    >
+      {name}
+    </a>
+  </div>
+  <p class="px-5 text-white opacity-80">{description}</p>
+  <span class="text-sm opacity-80 px-5 font-bold text-white"> Characters</span>
+  <div class="p-5 text-nowrap overflow-x-auto">
+    {
+      characters.map((kingdom) => {
+        return (
+          <Avatar
+            imageUrl={kingdom.image}
+            alt={kingdom.name}
+            link={`${baseEndpoint}(characters/slug/${kingdom.slug}`}
+            size="12"
+          />
+        );
+      })
+    }
+  </div>
+</li>

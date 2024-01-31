@@ -1,35 +1,64 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
+
+// Supports weights 300-800
+import "@fontsource-variable/open-sans";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-900">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-	
-	}
-	html {
-		
+  :root {
+  }
+  html {
+  }
 
-	}
+  body {
+    max-width: 1440px;
+    font-family: "Open Sans Variable", sans-serif;
+    margin:0 auto;
+  }
 
-	body{
-		max-width: 1440px;
-	}
+  a{
+    cursor: pointer;
+  }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
 </style>
