@@ -2,102 +2,8 @@
 import CharacterSection from "../components/CharacterSection.astro";
 import EpisodeSection from "../components/EpisodeSection.astro";
 import KingdomSection from "../components/KingdomSection.astro";
+import ProjectInfo from "../components/ProjectInfo.astro";
 import Layout from "../layouts/Layout.astro";
-
-// export interface IndexCharactersResponse {
-//   message: string;
-//   items: Character[];
-// }
-
-// export interface Character {
-
-//   kingdom: Kingdom;
-// }
-
-// export interface Kingdom {
-//   id: number;
-//   slug: string;
-//   name: string;
-//   description: string;
-//   image: string;
-//   thumbnail: string;
-// }
-
-// export interface IndexKingdomsResponse {
-//   message: string;
-//   items: KingdomItem[];
-// }
-
-// export interface KingdomItem {
-
-//   characters: CharacterItem[];
-// }
-
-// export interface CharacterItem {
-//   id: number;
-//   slug: string;
-//   name: string;
-//   full_name: string;
-//   description: string;
-//   specie: string;
-//   quotes: string[];
-//   image: string;
-//   thumbnail: string;
-//   kingdom_slug: string;
-// }
-
-// export interface IndexEpisodesResponse {
-//     message: string;
-//     items:   ItemCharacterEpisode[];
-// }
-
-
-// export interface IndexEpisodesResponse {
-//     message: string;
-//     items:   ItemCharacterEpisode[];
-// }
-
-// export interface ItemCharacterEpisode {
-    
-//     characters:  CharacterEpisode[];
-// }
-
-// export interface CharacterEpisode {
-//     id:           number;
-//     slug:         string;
-//     name:         string;
-//     full_name:    string;
-//     description:  string;
-//     specie:       string;
-//     quotes:       string[];
-//     image:        string;
-//     thumbnail:    string;
-//     kingdom_slug: string;
-// }
-
-
-
-// const baseCharactersUrl = `${baseUrl}/characters`;
-// const baseKingdomsUrl = `${baseUrl}/kingdoms`;
-
-// const response = await fetch(
-//   "https://adventure-time-api-lg.vercel.app/apiV1/characters/1,2,3,4,5,6?includeKingdom"
-// );
-// const data = (await response.json()) as IndexCharactersResponse;
-// const characters = data.items;
-
-// const responseKingdom = await fetch(
-//   "https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/1,2,3,4?includeCharacters"
-// );
-// const dataKingdom = (await responseKingdom.json()) as IndexKingdomsResponse;
-// const kingdoms = dataKingdom.items;
-
-// const dataEpisode = await fetch(
-//   "https://adventure-time-api-lg.vercel.app/apiV1/episodes/1,2?includeCharacters"
-// );
-// const dataEpisodes = (await dataEpisode.json()) as IndexEpisodesResponse;
-// const episodes = dataEpisodes.items;
-
 
 ---
 
@@ -108,14 +14,9 @@ import Layout from "../layouts/Layout.astro";
     </h1>
   </section>
   <main>
-  
-    <CharacterSection/>
-    <KingdomSection/>
-    <EpisodeSection/>
-
-
-
-    
-
+    <CharacterSection />
+    <KingdomSection />
+    <EpisodeSection />
+    <ProjectInfo />
   </main>
 </Layout>
