@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/mdx": "^2.1.1",
+    "@astrojs/starlight": "^0.17.2",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/open-sans": "^5.0.23",
     "astro": "^4.2.6",
