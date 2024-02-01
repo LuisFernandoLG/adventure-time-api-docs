@@ -3,12 +3,11 @@ title: Get kingdom by slug
 sidebar:
     order: 10
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to a single kingdom by using the `/kingdoms/slug/{slug}` endpoint.
+<CodeEndpoint path="/kingdoms/slug/candy-kingdom"/>
 
-    ```bash
-    https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/slug/candy-kingdom
-    ```
 ## Response
 ```json
 {

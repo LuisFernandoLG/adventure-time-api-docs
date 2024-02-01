@@ -3,12 +3,12 @@ title: Get All Characters
 sidebar:
     order: 20
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access the list of characters by using the `/characters` endpoint.
+<CodeEndpoint path="/characters"/>
 
-```bash
-https://adventure-time-api-lg.vercel.app/apiV1/characters
-```
+
 All data is returns in `items`, however this example does not show all available items.
 ```json
 {

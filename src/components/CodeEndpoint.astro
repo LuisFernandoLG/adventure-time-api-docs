@@ -1,0 +1,20 @@
+---
+import { baseEndpoint } from '@constants/api';
+import { Code, Icon } from '@astrojs/starlight/components';
+import BrowserIcon from '@components/icons/BrowserIcon.astro'
+interface Props {
+    path: string
+    title?: string
+}
+const {path, title} = Astro.props
+
+const url = `${baseEndpoint}${path}`
+
+---
+<div>
+    <a href={url} target="_blank" class="flex gap-2 justify-end underline">
+        <BrowserIcon class="w-[10px] h-[10px]"/>
+        <span>Open Link</span>
+    </a>
+    <Code code={url} lang="js" title="Endpoint" />
+</div>

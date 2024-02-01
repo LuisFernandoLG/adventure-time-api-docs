@@ -3,12 +3,11 @@ title: Get a single episode
 sidebar:
     order: 10
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to a single episode by using the `/episodes/{id}` endpoint.
+<CodeEndpoint path="/episodes/1"/>
 
-    ```bash
-    https://adventure-time-api-lg.vercel.app/apiV1/episodes/1
-    ```
 ## Response
 ```json
 {

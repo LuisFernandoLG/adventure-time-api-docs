@@ -3,12 +3,11 @@ title: Get character by slug
 sidebar:
     order: 10
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to a single character by using the `/characters/slug/{slug}` endpoint.
+<CodeEndpoint path="/characters/slug/finn"/>
 
-    ```bash
-    https://adventure-time-api-lg.vercel.app/apiV1/characters/slug/finn
-    ```
 ## Response
 ```json
 {

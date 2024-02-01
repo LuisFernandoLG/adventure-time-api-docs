@@ -3,12 +3,11 @@ title: Get episode by slug
 sidebar:
     order: 10
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to a single episode by using the `/episodes/slug/{slug}` endpoint.
+<CodeEndpoint path="/episodes/slug/slumber-party-panic"/>
 
-    ```bash
-    https://adventure-time-api-lg.vercel.app/apiV1/episodes/slug/slumber-party-panic
-    ```
 ## Response
 ```json
 {

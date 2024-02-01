@@ -1,8 +1,7 @@
 ---
 title: Filters
 ---
-import {baseEndpoint} from '../../../../constants/api.js'
-import { Code } from '@astrojs/starlight/components';
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 
 You can also get data filtered with params. To start filtering add `?` and then make sure to follow next pattern `query=value` and a `&` to separate each query. For example `?name=finn`.
@@ -12,8 +11,7 @@ Available queries are:
 - `specie`
 
 ## Example 
-<Code code={`${baseEndpoint}/characters?specie=human&name=fi`} lang="js" title="Endpoint" />
-
+<CodeEndpoint path="/characters?specie=human&name=fi"/>
 In this case we're using the `get all characters` endpoint to get data and we are filtering by `specie` and `name`. The result will be all the characters that are humans and have a name that starts with `fi`.
 
 
@@ -45,4 +43,4 @@ In this case we're using the `get all characters` endpoint to get data and we ar
 
 ## Pagination
 However, you can also use this on `/characters/paginated`
-<Code code={`${baseEndpoint}/characters/paginated?specie=human&name=fi`} lang="js" title="Endpoint" />
+<CodeEndpoint path="/characters/paginated?specie=human&name=fi"/>

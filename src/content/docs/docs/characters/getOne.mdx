@@ -3,11 +3,11 @@ title: Get a single character
 sidebar:
     order: 10
 ---
-import {baseEndpoint} from '@constants/api.js'
-import { Code } from '@astrojs/starlight/components';
+import CodeEndpoint from '@components/CodeEndpoint.astro'
+
 
 You can access to a single character by using the `/characters/{id}` endpoint.
-<Code code={`${baseEndpoint}/characters/1`} lang="js" title="Endpoint" />
+<CodeEndpoint path="/characters/1"/>
 
 ## Response
 ```json

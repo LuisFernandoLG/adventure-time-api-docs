@@ -3,12 +3,11 @@ title: pagination
 sidebar:
     order: 30
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can get data paginated by adding **paginated** like this `/chatacters/paginated`
+<CodeEndpoint path="/characters/paginated"/>
 
-```bash
-https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated
-```
 
 ## Response
 
@@ -168,13 +167,11 @@ https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated
 
 ## Params
 There are special params for pagination.
+
 ### PerPage
 If you don't want always get `10` items, you can set the `perPage` param to the endpoint:
-```
-https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?perPage=2
-```
+<CodeEndpoint path="/characters/paginated?perPage=2"/>
+
 ### page
 with the param `page` you can get the specific page you want.
-```
-https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?perPage=2
-```
+<CodeEndpoint path="/characters/paginated?perPage=2&page=2"/>

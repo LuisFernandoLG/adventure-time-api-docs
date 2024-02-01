@@ -8,11 +8,12 @@ sidebar:
   # Set a custom order for the link (lower numbers are displayed higher up
 
 ---
+import {baseEndpoint, host} from "@constants/api"
 
 Welcome to Adventure Time Docs
 
-**Base Url**: [http://adventure-time-api-lg.vercel.app/apiV1](http://adventure-time-api-lg.vercel.app/apiV1)
+**Base Url**: [{baseEndpoint}]({baseEndpoint})
 
-**Info URL**: [http://adventure-time-api-lg.vercel.app/info](http://adventure-time-api-lg.vercel.app/info)
+**Info URL**: [{host}/info]({host}/info)
 
 The info url contains information about all available API's resources. All requests are GET requests and go over https. All responses will return data in json.

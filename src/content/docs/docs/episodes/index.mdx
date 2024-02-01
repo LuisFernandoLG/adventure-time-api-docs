@@ -3,12 +3,11 @@ title: Get All Episodes
 sidebar:
     order: 20
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access the list of episodes by using the `/episodes` endpoint.
+<CodeEndpoint path="/episodes"/>
 
-```bash
-https://adventure-time-api-lg.vercel.app/apiV1/episodes
-```
 All data is returns in `items`, however this example does not show all available items.
 ```json
 {

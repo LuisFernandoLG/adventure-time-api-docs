@@ -3,12 +3,10 @@ title: Get multiples by id
 sidebar:
     order: 15
 ---
-import {baseEndpoint} from '../../../../constants/api.js'
-import { Code } from '@astrojs/starlight/components';
-
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to multiples characters by using the `/characters/{ids}` endpoint.
-<Code code={`${baseEndpoint}/characters/1,2,3`} lang="js" title="Endpoint" />
+<CodeEndpoint path="/characters/1,2,3"/>
 
 ## Response
 ```json

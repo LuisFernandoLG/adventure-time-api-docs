@@ -3,12 +3,11 @@ title: Get multiples by id
 sidebar:
     order: 15
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
 
 You can access to multiples kingdoms by using the `/kingdoms/{ids}` endpoint.
+<CodeEndpoint path="/kingdoms/1,2,3"/>
 
-    ```bash
-    https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/1,2,3
-    ```
 ## Response
 ```json
 {

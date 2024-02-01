@@ -1,16 +1,15 @@
 ---
 title: Include Data
 ---
+import CodeEndpoint from '@components/CodeEndpoint.astro'
+
 You can get more data of any episode by adding special params. Like
 - `includeCharacters`: to get the characters that apprear to the episode
 ## include Characters
 
 
 You can use get this data adding the `?includeCharacters` query parameter to the URL.
-
-```bash
-https://adventure-time-api-lg.vercel.app/apiV1/episodes/1?includeCharacters
-```
+<CodeEndpoint path="/episodes/1?includeCharacters"/>
 
 ```json
 {
