@@ -19,8 +19,10 @@ export default defineConfig({
         social: {
           github: 'https://github.com/LuisFernandoLG',
         },
-        customCss:['./src/styles/custom.css']
-        
+        customCss:['./src/styles/custom.css'],
+        editLink:{
+          baseUrl:"https://github.com/LuisFernandoLG/adventure-time-api-docs/edit/master"
+        }
       },
       mdx()
     ),
