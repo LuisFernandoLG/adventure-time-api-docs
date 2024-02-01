@@ -13,6 +13,8 @@ const episodes = await episodeService().getManyById([1, 2]);
     episodes.map((episode) => {
       return (
       <EpisodesCard 
+        id={episode.id}
+        slug={episode.slug}
         image={episode.image}
         name={episode.name}
         description={episode.description}

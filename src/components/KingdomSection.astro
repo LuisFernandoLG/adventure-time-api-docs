@@ -15,7 +15,7 @@ const kingdoms = await kingdomService().getManyById([1,2,3,4])
       {
         kingdoms.map((kingdom) => {
           return (
-          <KingdomCard name={kingdom.name} image={kingdom.thumbnail} characters={kingdom.characters} />
+          <KingdomCard id={kingdom.id} slug={kingdom.slug} name={kingdom.name} image={kingdom.thumbnail} characters={kingdom.characters} />
           );
         })
       }

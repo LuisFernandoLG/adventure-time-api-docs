@@ -4,12 +4,14 @@ import type { Character } from "../types/Character";
 import Avatar from "./Avatar.astro";
 
 interface Props {
+  id: number;
+  slug: string;
   name: string;
   image: string;
   characters: Character[];
 }
 
-const { image, name, characters } = Astro.props;
+const { id, slug, image, name, characters } = Astro.props;
 ---
 
 <li
@@ -24,6 +26,8 @@ background: linear-gradient(177deg, transparent 0%, rgba(0, 0, 0, 0.48) 90%);"
     >
     </div>
     <a
+      href={`${baseEndpoint}/kingdoms/slug/${slug}`}
+      target="_blank"
       class="absolute bottom-5 left-5 text-white text-nowrap text-ellipsis text-2xl font-black hover:underline"
     >
       {name}
@@ -37,7 +41,7 @@ background: linear-gradient(177deg, transparent 0%, rgba(0, 0, 0, 0.48) 90%);"
           <Avatar
             imageUrl={item.thumbnail}
             alt={item.name}
-            link={`${baseEndpoint}/slug/${item.slug}`}
+            link={`${baseEndpoint}/characters/slug/${item.slug}`}
             size="12"
           />
         );
