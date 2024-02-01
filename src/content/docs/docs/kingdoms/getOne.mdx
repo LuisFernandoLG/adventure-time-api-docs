@@ -1,0 +1,34 @@
+---
+title: Get a single kingdom
+sidebar:
+    order: 10
+---
+
+You can access to a single episode by using the `/kingdoms/{id}` endpoint.
+
+    ```bash
+    https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/1
+    ```
+## Response
+```json
+{
+    "message": "item retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "candy-kingdom",
+        "name": "Candy Kingdom",
+        "description": "The Candy Kingdom is a sweet and colorful realm ruled by Princess Bubblegum. Known for its sugary landscapes and candy citizens, it is a hub of scientific innovation and enchanting adventures. The kingdom thrives on a blend of science and magic, creating a whimsical and delightful atmosphere.",
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom-thumbnail.webp"
+    }
+}
+```
+## Kingdom Model
+| key          | type   | description                                        |
+|--------------|--------|----------------------------------------------------|
+| id           | int    | unique identifier for the kingdom                     |
+| slug         | string | slug or short label for the kingdom                   |
+| name         | string | name of the kingdom                                   |
+| description  | string | detailed description or information about the kingdom|
+| image        | string | URL for the main image of the kingdom                  |
+| thumbnail    | string | URL for a smaller or thumbnail version of the main image |

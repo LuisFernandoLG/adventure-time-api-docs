@@ -1,0 +1,1 @@
+export const getAllCharacters = 'https://rickandmortyapi.com/api/character';

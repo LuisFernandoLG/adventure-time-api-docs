@@ -1,0 +1,111 @@
+---
+title: Include Data
+---
+You can get more data of any character by adding special params. Like
+- `includeKingdom`: to get the kingdom of the character
+- `includeEpisodes`: to get the episodes where the character appears
+
+## include Kingdom
+
+
+You can use get this data adding the `?includeKingdom` query parameter to the URL.
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/characters/1?includeKingdom
+```
+
+```json
+{
+  "message": "item retrieved successfully",
+  "item": {
+    "id": 1,
+    "slug": "finn",
+    "name": "Finn",
+    "full_name": "Finn Mertens",
+    "description": "Although at times impulsive, aggressive and short tempered, Finn is a kind, brave, selfless, and righteous boy. His aspirations to become a great hero makes him somewhat of a moral sheriff in the Land of Ooo, as he is willing to help and protect any innocent person or creature",
+    "specie": "Human",
+    "quotes": [
+      "What time is it? Adventure Time!",
+      "No worms on the bed!",
+      "You don't need a mirror to know you look good. You're beautiful on the inside.",
+      "'m not a hero because I want your approval. I do it because I want to!"
+    ],
+    "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn.webp",
+    "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn-thumbnail.webp",
+    "kingdom_slug": "candy-kingdom",
+    "kingdom": {
+      "id": 1,
+      "slug": "candy-kingdom",
+      "name": "Candy Kingdom",
+      "description": "The Candy Kingdom is a sweet and colorful realm ruled by Princess Bubblegum. Known for its sugary landscapes and candy citizens, it is a hub of scientific innovation and enchanting adventures. The kingdom thrives on a blend of science and magic, creating a whimsical and delightful atmosphere.",
+      "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom.webp",
+      "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom-thumbnail.webp"
+    }
+  }
+}
+```
+
+
+## include Episodes
+
+
+You can use get this data adding the `?includeEpisodes` query parameter to the URL.
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/characters/1?includeEpisodes
+```
+
+```json
+{
+    "message": "item retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "finn",
+        "name": "Finn",
+        "full_name": "Finn Mertens",
+        "description": "Although at times impulsive, aggressive and short tempered, Finn is a kind, brave, selfless, and righteous boy. His aspirations to become a great hero makes him somewhat of a moral sheriff in the Land of Ooo, as he is willing to help and protect any innocent person or creature",
+        "specie": "Human",
+        "quotes": [
+            "What time is it? Adventure Time!",
+            "No worms on the bed!",
+            "You don't need a mirror to know you look good. You're beautiful on the inside.",
+            "'m not a hero because I want your approval. I do it because I want to!"
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn-thumbnail.webp",
+        "kingdom_slug": "candy-kingdom",
+        "episodes": [
+            {
+                "id": 1,
+                "slug": "slumber-party-panic",
+                "name": "Slumber Party Panic",
+                "description": "Finn and Jake must save Princess Bubblegum from an impending zombie attack.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic-thumbnail.webp",
+                "release": "2010-04-05",
+                "episode": "S01E01"
+            },
+            {
+                "id": 2,
+                "slug": "trouble-in-lumpy-space",
+                "name": "Trouble in Lumpy Space",
+                "description": "Finn and Jake venture into Lumpy Space to cure the Lumps from Jake's bite.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space-thumbnail.webp",
+                "release": "2010-04-12",
+                "episode": "S01E02"
+            },
+            {
+                "id": 3,
+                "slug": "prisoners-of-love",
+                "name": "Prisoners of Love",
+                "description": "Finn and Jake go on a mission to rescue kidnapped princesses from the Ice King.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/prisoners-of-love.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/prisoners-of-love-thumbnail.webp",
+                "release": "2010-04-19",
+                "episode": "S01E03"
+            }
+        ]
+    }
+}
+```

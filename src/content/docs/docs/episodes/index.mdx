@@ -1,0 +1,46 @@
+---
+title: Get All Episodes
+sidebar:
+    order: 20
+---
+
+You can access the list of episodes by using the `/episodes` endpoint.
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/episodes
+```
+All data is returns in `items`, however this example does not show all available items.
+```json
+{
+    "message": "items retrieved successfully",
+    "items": [
+        {
+            "id": 1,
+            "slug": "slumber-party-panic",
+            "name": "Slumber Party Panic",
+            "description": "Finn and Jake must save Princess Bubblegum from an impending zombie attack.",
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic-thumbnail.webp",
+            "release": "2010-04-05",
+            "episode": "S01E01"
+        },
+        {
+            "id": 2,
+            "slug": "trouble-in-lumpy-space",
+            "name": "Trouble in Lumpy Space",
+            "description": "Finn and Jake venture into Lumpy Space to cure the Lumps from Jake's bite.",
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space-thumbnail.webp",
+            "release": "2010-04-12",
+            "episode": "S01E02"
+        },
+    ]
+}
+```
+
+
+
+## Response Schema
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| items           | [episode](/docs/episodes/getone/#episode-model)[] | array of episodes.                                  |

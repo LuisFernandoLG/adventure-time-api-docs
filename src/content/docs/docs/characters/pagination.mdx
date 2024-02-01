@@ -1,0 +1,180 @@
+---
+title: pagination
+sidebar:
+    order: 30
+---
+
+You can get data paginated by adding **paginated** like this `/chatacters/paginated`
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated
+```
+
+## Response
+
+```json
+{
+  "message": "items retrieved successfully",
+  "pagination": {
+    "current_page": 1,
+    "data": [
+      {
+        "id": 1,
+        "slug": "finn",
+        "name": "Finn",
+        "full_name": "Finn Mertens",
+        "description": "Although at times impulsive, aggressive and short tempered, Finn is a kind, brave, selfless, and righteous boy. His aspirations to become a great hero makes him somewhat of a moral sheriff in the Land of Ooo, as he is willing to help and protect any innocent person or creature",
+        "specie": "Human",
+        "quotes": [
+          "What time is it? Adventure Time!",
+          "No worms on the bed!",
+          "You don't need a mirror to know you look good. You're beautiful on the inside.",
+          "'m not a hero because I want your approval. I do it because I want to!"
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn-thumbnail.webp",
+        "kingdom_slug": "candy-kingdom"
+      },
+      {
+        "id": 2,
+        "slug": "jake",
+        "name": "Jake",
+        "full_name": "Jake the Dog",
+        "description": "Jake is a shape-shifting dog with a laid-back attitude and a love for adventure. Despite his easygoing demeanor, he is a loyal and supportive friend. Jake has the magical ability to stretch and change his shape, allowing him to morph into various forms to aid Finn in their quests.",
+        "specie": "Dog",
+        "quotes": [
+          "Mathematical!",
+          "Dude, sucking at something is the first step to being sorta good at something.",
+          "I'm not lazy, I'm on energy saving mode.",
+          "I'm not weird. I'm just ahead of the curve."
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/jake.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/jake-thumbnail.webp",
+        "kingdom_slug": "candy-kingdom"
+      },
+      {
+        "id": 3,
+        "slug": "marceline",
+        "name": "Marceline",
+        "full_name": "Marceline Abadeer",
+        "description": "Marceline is a vampire queen with a rock-and-roll spirit. She is a complex character with a mischievous personality and a deep, introspective side. Marceline is known for her musical talents and often expresses her emotions through her songs. Despite her tough exterior, she values her friendships and has a caring side.",
+        "specie": "Vampire",
+        "quotes": [
+          "I'm not mean, I'm a thousand years old, and I just lost track of my moral code.",
+          "I'm gonna eat the red from your pretty pink face.",
+          "I'm not good at feelings, deal with it.",
+          "I'm not the Bubblegum villain. I'm the guy who's seen the end of the world."
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/marceline.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/marceline-thumbnail.webp",
+        "kingdom_slug": "nightosphere"
+      },
+      {
+        "id": 4,
+        "slug": "princess-bubblegum",
+        "name": "Princess Bubblegum",
+        "full_name": "Bonnibel Bubblegum",
+        "description": "Princess Bubblegum, often referred to as PB, is the ruler of the Candy Kingdom. She is a highly intelligent and scientifically inclined character with a strong sense of responsibility. As a skilled scientist, she is often seen conducting various experiments to benefit her kingdom and its inhabitants.",
+        "specie": "Candy Elemental",
+        "quotes": [
+          "I'm not a fan of the vampire drama.",
+          "Solving problems with pranks is wrong, Finn. And wrong is something I just don't do!",
+          "Intelligence is my strong suit; my looks are just a bonus.",
+          "I'm not a hero. I'm a high-functioning sociopath."
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/princess-bubblegum.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/princess-bubblegum-thumbnail.webp",
+        "kingdom_slug": "candy-kingdom"
+      },
+      {
+        "id": 5,
+        "slug": "ice-king",
+        "name": "Ice King",
+        "full_name": "Simon Petrikov",
+        "description": "The Ice King is a character who is no stranger to tragedy. He is a lonely, misunderstood soul who is constantly seeking companionship. He is a complex character with a tragic backstory. He is a lonely, misunderstood soul who is constantly seeking companionship.",
+        "specie": "Wizard",
+        "quotes": [
+          "I'm not crazy. I'm just a little unwell.",
+          "I'm not a psychopath, I'm a high-functioning sociopath. Do your research.",
+          "I'm not a psychopath, I'm a high-functioning sociopath. Do your research.",
+          "I'm not a psychopath, I'm a high-functioning sociopath. Do your research."
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/ice-king.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/ice-king-thumbnail.webp",
+        "kingdom_slug": "ice-kingdom"
+      },
+      {
+        "id": 6,
+        "slug": "lumpy-space-princess",
+        "name": "Lumpy Space Princess",
+        "full_name": "Lumpy Space Princess",
+        "description": "Lumpy Space Princess is a character who is no stranger to tragedy. She is a lonely, misunderstood soul who is constantly seeking companionship. She is a complex character with a tragic backstory. She is a lonely, misunderstood soul who is constantly seeking companionship.",
+        "specie": "Lumpy Space Person",
+        "quotes": [
+          "I'm not crazy. I'm just a little unwell.",
+          "I'm not a psychopath, I'm a high-functioning sociopath. Do your research."
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/lumpsy-space-princess.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/lumpsy-space-princess-thumbnail.webp",
+        "kingdom_slug": "lumpy-space"
+      }
+    ],
+    "first_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?page=1",
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "next_page_url": null,
+    "path": "http://adventure-time-api-lg.vercel.app/apiV1/characters/paginated",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 6,
+    "total": 6
+  }
+}
+```
+
+## Response Schema
+
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| current_page   | int                                                     | current page fetched.                                 |
+| data           | [character](/docs/characters/getone/#character-model)[] | array of characters.                                  |
+| next_page_url  | string                                                  | link to get next `n` elements                         |
+| first_page_url | string                                                  | URL for the first page of the paginated data          |
+| from           | int                                                     | starting index of the current page's data             |
+| last_page      | int                                                     | number of the last available page                     |
+| last_page_url  | string                                                  | URL for the last page of the paginated data           |
+| links          | array                                                   | an array of objects containing link information       |
+| links.url      | string                                                  | URL associated with the link                          |
+| links.label    | string                                                  | label or text associated with the link                |
+| links.active   | bool                                                    | indicates whether the link is currently active or not |
+
+## Params
+There are special params for pagination.
+### PerPage
+If you don't want always get `10` items, you can set the `perPage` param to the endpoint:
+```
+https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?perPage=2
+```
+### page
+with the param `page` you can get the specific page you want.
+```
+https://adventure-time-api-lg.vercel.app/apiV1/characters/paginated?perPage=2
+```

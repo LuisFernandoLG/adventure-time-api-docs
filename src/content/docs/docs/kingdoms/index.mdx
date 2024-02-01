@@ -1,0 +1,42 @@
+---
+title: Get All Kingdoms
+sidebar:
+    order: 20
+---
+
+You can access the list of kingdoms by using the `/kingdoms` endpoint.
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/kingdoms
+```
+All data is returns in `items`, however this example does not show all available items.
+```json
+{
+    "message": "items retrieved successfully",
+    "items": [
+        {
+            "id": 1,
+            "slug": "candy-kingdom",
+            "name": "Candy Kingdom",
+            "description": "The Candy Kingdom is a sweet and colorful realm ruled by Princess Bubblegum. Known for its sugary landscapes and candy citizens, it is a hub of scientific innovation and enchanting adventures. The kingdom thrives on a blend of science and magic, creating a whimsical and delightful atmosphere.",
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom-thumbnail.webp"
+        },
+        {
+            "id": 2,
+            "slug": "fire-kingdom",
+            "name": "Fire Kingdom",
+            "description": "The Fire Kingdom is a blazing domain ruled by Flame Princess. It is a realm of intense heat and fiery landscapes, inhabited by flame-based creatures and subjects. The Fire Kingdom is known for its passionate and sometimes volatile nature, reflecting the element of fire that defines its existence.",
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/fire-kingdom.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/fire-kingdom-thumbnail.webp"
+        }
+    ]
+}
+```
+
+
+
+## Response Schema
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| items           | [kingdom](/docs/kingdoms/getone/#kingdom-model)[] | array of kingdoms.                                  |

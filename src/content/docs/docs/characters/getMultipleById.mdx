@@ -1,0 +1,76 @@
+---
+title: Get multiples by id
+sidebar:
+    order: 15
+---
+import {baseEndpoint} from '../../../../constants/api.js'
+import { Code } from '@astrojs/starlight/components';
+
+
+You can access to multiples characters by using the `/characters/{ids}` endpoint.
+<Code code={`${baseEndpoint}/characters/1,2,3`} lang="js" title="Endpoint" />
+
+## Response
+```json
+{
+    "message": "items retrieved successfully",
+    "items": [
+        {
+            "id": 1,
+            "slug": "finn",
+            "name": "Finn",
+            "full_name": "Finn Mertens",
+            "description": "Although at times impulsive, aggressive and short tempered, Finn is a kind, brave, selfless, and righteous boy. His aspirations to become a great hero makes him somewhat of a moral sheriff in the Land of Ooo, as he is willing to help and protect any innocent person or creature",
+            "specie": "Human",
+            "quotes": [
+                "What time is it? Adventure Time!",
+                "No worms on the bed!",
+                "You don't need a mirror to know you look good. You're beautiful on the inside.",
+                "'m not a hero because I want your approval. I do it because I want to!"
+            ],
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn-thumbnail.webp",
+            "kingdom_slug": "candy-kingdom"
+        },
+        {
+            "id": 2,
+            "slug": "jake",
+            "name": "Jake",
+            "full_name": "Jake the Dog",
+            "description": "Jake is a shape-shifting dog with a laid-back attitude and a love for adventure. Despite his easygoing demeanor, he is a loyal and supportive friend. Jake has the magical ability to stretch and change his shape, allowing him to morph into various forms to aid Finn in their quests.",
+            "specie": "Dog",
+            "quotes": [
+                "Mathematical!",
+                "Dude, sucking at something is the first step to being sorta good at something.",
+                "I'm not lazy, I'm on energy saving mode.",
+                "I'm not weird. I'm just ahead of the curve."
+            ],
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/jake.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/jake-thumbnail.webp",
+            "kingdom_slug": "candy-kingdom"
+        },
+        {
+            "id": 3,
+            "slug": "marceline",
+            "name": "Marceline",
+            "full_name": "Marceline Abadeer",
+            "description": "Marceline is a vampire queen with a rock-and-roll spirit. She is a complex character with a mischievous personality and a deep, introspective side. Marceline is known for her musical talents and often expresses her emotions through her songs. Despite her tough exterior, she values her friendships and has a caring side.",
+            "specie": "Vampire",
+            "quotes": [
+                "I'm not mean, I'm a thousand years old, and I just lost track of my moral code.",
+                "I'm gonna eat the red from your pretty pink face.",
+                "I'm not good at feelings, deal with it.",
+                "I'm not the Bubblegum villain. I'm the guy who's seen the end of the world."
+            ],
+            "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/marceline.webp",
+            "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/marceline-thumbnail.webp",
+            "kingdom_slug": "nightosphere"
+        }
+    ]
+}
+```	
+
+## Response Schema
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| items           | [character](/docs/characters/getone/#character-model)[] | array of characters.                                  |

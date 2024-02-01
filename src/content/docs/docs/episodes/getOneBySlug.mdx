@@ -1,0 +1,27 @@
+---
+title: Get episode by slug
+sidebar:
+    order: 10
+---
+
+You can access to a single episode by using the `/episodes/slug/{slug}` endpoint.
+
+    ```bash
+    https://adventure-time-api-lg.vercel.app/apiV1/episodes/slug/slumber-party-panic
+    ```
+## Response
+```json
+{
+    "message": "ite retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "slumber-party-panic",
+        "name": "Slumber Party Panic",
+        "description": "Finn and Jake must save Princess Bubblegum from an impending zombie attack.",
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic-thumbnail.webp",
+        "release": "2010-04-05",
+        "episode": "S01E01"
+    }
+}
+```

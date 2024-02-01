@@ -17,8 +17,7 @@ export default defineConfig({
           replacesTitle: true,
         },
         social: {
-          discord: 'https://astro.build/chat',
-          github: 'https://github.com/withastro/starlight',
+          github: 'https://github.com/LuisFernandoLG',
         },
         customCss:['./src/styles/custom.css']
         

@@ -1,0 +1,120 @@
+---
+title: pagination
+sidebar:
+    order: 30
+---
+
+You can get data paginated by adding **paginated** like this `/episodes/paginated`
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated
+```
+
+## Response
+
+```json
+{
+    "message": "items retrieved successfully",
+    "pagination": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "slug": "slumber-party-panic",
+                "name": "Slumber Party Panic",
+                "description": "Finn and Jake must save Princess Bubblegum from an impending zombie attack.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic-thumbnail.webp",
+                "release": "2010-04-05",
+                "episode": "S01E01"
+            },
+            {
+                "id": 2,
+                "slug": "trouble-in-lumpy-space",
+                "name": "Trouble in Lumpy Space",
+                "description": "Finn and Jake venture into Lumpy Space to cure the Lumps from Jake's bite.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/trouble-in-lumpy-space-thumbnail.webp",
+                "release": "2010-04-12",
+                "episode": "S01E02"
+            },
+            {
+                "id": 3,
+                "slug": "prisoners-of-love",
+                "name": "Prisoners of Love",
+                "description": "Finn and Jake go on a mission to rescue kidnapped princesses from the Ice King.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/prisoners-of-love.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/prisoners-of-love-thumbnail.webp",
+                "release": "2010-04-19",
+                "episode": "S01E03"
+            },
+            {
+                "id": 4,
+                "slug": "tree-trunks",
+                "name": "Tree Trunks",
+                "description": "Finn and Jake go on a quest with Tree Trunks to find the legendary Crystal Gem Apple.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/tree-trunks.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/tree-trunks-thumbnail.webp",
+                "release": "2010-04-26",
+                "episode": "S01E04"
+            }
+        ],
+        "first_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 4,
+        "total": 4
+    }
+}
+```
+
+## Response Schema
+
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| current_page   | int                                                     | current page fetched.                                 |
+| data           | [episode](/docs/episodes/getone/#character-model)[] | array of episodes.                                  |
+| next_page_url  | string                                                  | link to get next `n` elements                         |
+| first_page_url | string                                                  | URL for the first page of the paginated data          |
+| from           | int                                                     | starting index of the current page's data             |
+| last_page      | int                                                     | number of the last available page                     |
+| last_page_url  | string                                                  | URL for the last page of the paginated data           |
+| links          | array                                                   | an array of objects containing link information       |
+| links.url      | string                                                  | URL associated with the link                          |
+| links.label    | string                                                  | label or text associated with the link                |
+| links.active   | bool                                                    | indicates whether the link is currently active or not |
+
+## Params
+There are special params for pagination.
+### PerPage
+If you don't want always get `10` items, you can set the `perPage` param to the endpoint:
+```
+https://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated?perPage=2
+```
+### page
+with the param `page` you can get the specific page you want.
+```
+https://adventure-time-api-lg.vercel.app/apiV1/episodes/paginated?perPage=2
+```

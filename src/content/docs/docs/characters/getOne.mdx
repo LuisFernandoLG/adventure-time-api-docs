@@ -1,0 +1,47 @@
+---
+title: Get a single character
+sidebar:
+    order: 10
+---
+import {baseEndpoint} from '@constants/api.js'
+import { Code } from '@astrojs/starlight/components';
+
+You can access to a single character by using the `/characters/{id}` endpoint.
+<Code code={`${baseEndpoint}/characters/1`} lang="js" title="Endpoint" />
+
+## Response
+```json
+{
+    "message": "item retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "finn",
+        "name": "Finn",
+        "full_name": "Finn Mertens",
+        "description": "Although at times impulsive, aggressive and short tempered, Finn is a kind, brave, selfless, and righteous boy. His aspirations to become a great hero makes him somewhat of a moral sheriff in the Land of Ooo, as he is willing to help and protect any innocent person or creature",
+        "specie": "Human",
+        "quotes": [
+            "What time is it? Adventure Time!",
+            "No worms on the bed!",
+            "You don't need a mirror to know you look good. You're beautiful on the inside.",
+            "'m not a hero because I want your approval. I do it because I want to!"
+        ],
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/characters/finn-thumbnail.webp",
+        "kingdom_slug": "candy-kingdom"
+    }
+}
+```
+## Character Model
+| key              | type   | description                                                                                              |
+|------------------|--------|----------------------------------------------------------------------------------------------------------|
+| id          | int    | Unique identifier for the character                                                                          |
+| slug        | string | Slug or short label for the character                                                                        |
+| name        | string | Name of the character                                                                                        |
+| full_name   | string | Full name or extended title of the character                                                                |
+| description | string | Detailed description or information about the character                                                     |
+| specie      | string | Species or category to which the character belongs                                                          |
+| quotes      | array  | An array of quotes, each quote is `string`                                                             |
+| image       | string | URL for the main image of the character                                                                     |
+| thumbnail   | string | URL for a smaller or thumbnail version of the main image                                               |
+| kingdom_slug | string | Slug or label for the kingdom to which the character belongs                                                |

@@ -1,0 +1,25 @@
+---
+title: Get kingdom by slug
+sidebar:
+    order: 10
+---
+
+You can access to a single kingdom by using the `/kingdoms/slug/{slug}` endpoint.
+
+    ```bash
+    https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/slug/candy-kingdom
+    ```
+## Response
+```json
+{
+    "message": "item retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "candy-kingdom",
+        "name": "Candy Kingdom",
+        "description": "The Candy Kingdom is a sweet and colorful realm ruled by Princess Bubblegum. Known for its sugary landscapes and candy citizens, it is a hub of scientific innovation and enchanting adventures. The kingdom thrives on a blend of science and magic, creating a whimsical and delightful atmosphere.",
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom-thumbnail.webp"
+    }
+}
+```

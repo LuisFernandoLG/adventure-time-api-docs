@@ -1,0 +1,38 @@
+---
+title: Get a single episode
+sidebar:
+    order: 10
+---
+
+You can access to a single episode by using the `/episodes/{id}` endpoint.
+
+    ```bash
+    https://adventure-time-api-lg.vercel.app/apiV1/episodes/1
+    ```
+## Response
+```json
+{
+    "message": "ite retrieved successfully",
+    "item": {
+        "id": 1,
+        "slug": "slumber-party-panic",
+        "name": "Slumber Party Panic",
+        "description": "Finn and Jake must save Princess Bubblegum from an impending zombie attack.",
+        "image": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic.webp",
+        "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/episodes/slumber-party-panic-thumbnail.webp",
+        "release": "2010-04-05",
+        "episode": "S01E01"
+    }
+}
+```
+## Episode Model
+| key                  | type   | description                                        |
+|----------------------|--------|----------------------------------------------------|
+| id              | int    | unique identifier for the item                     |
+| slug            | string | slug or short label for the item                   |
+| name            | string | name of the item                                   |
+| description     | string | detailed description or information about the item|
+| image           | string | URL for the main image of the item                  |
+| thumbnail       | string | URL for a smaller or thumbnail version of the main image |
+| release         | string | release date of the item (in the format YYYY-MM-DD) |
+| episode         | string | episode identifier or label                        |

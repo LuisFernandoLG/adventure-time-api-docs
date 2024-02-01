@@ -1,0 +1,120 @@
+---
+title: pagination
+sidebar:
+    order: 30
+---
+
+You can get data paginated by adding **paginated** like this `/kingdoms/paginated`
+
+```bash
+https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated
+```
+
+## Response
+
+```json
+{
+    "message": "items paginated retrieved successfully",
+    "pagination": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "slug": "candy-kingdom",
+                "name": "Candy Kingdom",
+                "description": "The Candy Kingdom is a sweet and colorful realm ruled by Princess Bubblegum. Known for its sugary landscapes and candy citizens, it is a hub of scientific innovation and enchanting adventures. The kingdom thrives on a blend of science and magic, creating a whimsical and delightful atmosphere.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/candy-kingdom-thumbnail.webp"
+            },
+            {
+                "id": 2,
+                "slug": "fire-kingdom",
+                "name": "Fire Kingdom",
+                "description": "The Fire Kingdom is a blazing domain ruled by Flame Princess. It is a realm of intense heat and fiery landscapes, inhabited by flame-based creatures and subjects. The Fire Kingdom is known for its passionate and sometimes volatile nature, reflecting the element of fire that defines its existence.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/fire-kingdom.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/fire-kingdom-thumbnail.webp"
+            },
+            {
+                "id": 3,
+                "slug": "ice-kingdom",
+                "name": "Ice Kingdom",
+                "description": "The Ice Kingdom is a frigid and frozen domain ruled by the Ice King and formerly by the Snow Golem. It is a land of ice and snow, inhabited by penguins and other cold-weather creatures. The Ice Kingdom is known for its harsh weather and climate, as well as its unique inhabitants.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/ice-kingdom.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/ice-kingdom-thumbnail.webp"
+            },
+            {
+                "id": 4,
+                "slug": "lumpy-space",
+                "name": "Lumpy Space",
+                "description": "Lumpy Space is a realm inhabited by Lumpy Space People. It is a strange and distant land, filled with bizarre creatures and unique inhabitants. Lumpy Space is known for its unusual customs and culture, as well as its strange and mysterious nature.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/lumpy-space.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/lumpy-space-thumbnail.webp"
+            },
+            {
+                "id": 5,
+                "slug": "nightosphere",
+                "name": "Nightosphere",
+                "description": "The Nightosphere is a dark and mysterious realm inhabited by demons and other supernatural creatures. It is the home of Hunson Abadeer and Marceline the Vampire Queen, as well as many other strange beings. The Nightosphere is known for its strange and mysterious nature, as well as its unique inhabitants.",
+                "image": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/nightosphere.webp",
+                "thumbnail": "http://adventure-time-api-lg.vercel.app/assets/images/kingdoms/nightosphere-thumbnail.webp"
+            }
+        ],
+        "first_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 5,
+        "total": 5
+    }
+}
+```
+
+## Response Schema
+
+| key            | type                                                    | description                                           |
+| -------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| current_page   | int                                                     | current page fetched.                                 |
+| data           | [episode](/docs/kingdoms/getone/#kingdom-model)[] | array of kingdoms.                                  |
+| next_page_url  | string                                                  | link to get next `n` elements                         |
+| first_page_url | string                                                  | URL for the first page of the paginated data          |
+| from           | int                                                     | starting index of the current page's data             |
+| last_page      | int                                                     | number of the last available page                     |
+| last_page_url  | string                                                  | URL for the last page of the paginated data           |
+| links          | array                                                   | an array of objects containing link information       |
+| links.url      | string                                                  | URL associated with the link                          |
+| links.label    | string                                                  | label or text associated with the link                |
+| links.active   | bool                                                    | indicates whether the link is currently active or not |
+
+## Params
+There are special params for pagination.
+### PerPage
+If you don't want always get `10` items, you can set the `perPage` param to the endpoint:
+```
+https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated?perPage=2
+```
+### page
+with the param `page` you can get the specific page you want.
+```
+https://adventure-time-api-lg.vercel.app/apiV1/kingdoms/paginated?perPage=2
+```
