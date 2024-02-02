@@ -11,7 +11,7 @@ const kingdoms = await kingdomService().getManyById([1,2,3,4])
       Kingdoms
     </h2>
 
-    <ul class="grid grid-cols-6 gap-8 max-w-[1000px] mx-auto">
+    <ul class="grid p-5 grid-cols-6 gap-8 max-w-[1000px] mx-auto">
       {
         kingdoms.map((kingdom) => {
           return (

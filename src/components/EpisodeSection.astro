@@ -8,7 +8,7 @@ const episodes = await episodeService().getManyById([1, 2]);
 
 <h2 class="text-4xl text-center font-bold text-white mt-20 mb-5">Episodes</h2>
 
-<section class="grid grid-cols-6 gap-8 max-w-[1000px] mx-auto">
+<section class="grid grid-cols-6 p-5 gap-8 max-w-[1000px] mx-auto">
   {
     episodes.map((episode) => {
       return (

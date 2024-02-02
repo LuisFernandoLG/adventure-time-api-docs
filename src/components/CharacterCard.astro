@@ -16,17 +16,17 @@ const props = Astro.props;
 ---
 
 
-<article class="col-span-3 flex gap-5 rounded-md overflow-hidden bg-gray-700">
-    <div class="w-40 h-40">
+<article class="col-span-6 md:col-span-3 flex gap-5 rounded-md overflow-hidden bg-gray-700">
+    <div class="w-40 h-full min-w-40">
       <img
-        class="aspect-square"
+        class="aspect-square h-full object-cover"
         src={props.image}
         alt={props.full_name}
       />
     </div>
-    <div class="py-4 pr-4">
+    <div class="py-4 pr-4 truncate text-white">
       <a
-        class="text-2xl font-black whitespace-nowrap text-white hover:text-pink-500"
+        class="text-2xl md:text-3xl font-black  text-white hover:text-pink-500"
         href={`${baseEndpoint}/characters/${props.id}?includeKingdom`}
         target="_blank"
       >
@@ -35,7 +35,7 @@ const props = Astro.props;
       <span class="block text-white opacity-90 text-xs mt-2">
         Full Name:
       </span>
-      <span class="block text-white black text-md">
+      <span class="block md:text-xl text-white black text-md">
         {props.full_name}
       </span>
 
@@ -43,7 +43,7 @@ const props = Astro.props;
         Kingdom:
       </span>
       <a
-        class="block text-white font-bold hover:text-pink-500 underline"
+        class="block md:text-xl text-white font-bold hover:text-pink-500 underline"
         href={`${baseEndpoint}/kingdoms/${props.kingdomId}`}
         target="_blank"
       >

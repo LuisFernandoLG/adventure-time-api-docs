@@ -15,7 +15,7 @@ const { id, slug, image, name, characters } = Astro.props;
 ---
 
 <li
-  class="col-span-3 flex flex-col gap-3 rounded-xl overflow-hidden bg-gray-700 shadow-sm"
+  class="col-span-6 md:col-span-3 flex flex-col gap-3 rounded-xl overflow-hidden bg-gray-700 shadow-sm"
 >
   <div class="aspect-video relative">
     <img src={image} alt={name} />
@@ -28,12 +28,12 @@ background: linear-gradient(177deg, transparent 0%, rgba(0, 0, 0, 0.48) 90%);"
     <a
       href={`${baseEndpoint}/kingdoms/slug/${slug}`}
       target="_blank"
-      class="absolute bottom-5 left-5 text-white text-nowrap text-ellipsis text-2xl font-black hover:underline"
+      class="absolute text-2xl md:text-3xl bottom-5 left-5 text-white text-nowrap text-ellipsis font-black hover:underline"
     >
       {name}
     </a>
   </div>
-  <span class="text-sm opacity-80 px-5 font-bold text-white"> Characters</span>
+  <span class="text-sm md:text-xl opacity-80 px-5 font-bold text-white"> Characters</span>
   <div class="p-5 text-nowrap overflow-x-auto">
     {
       characters.map((item) => {
@@ -42,7 +42,7 @@ background: linear-gradient(177deg, transparent 0%, rgba(0, 0, 0, 0.48) 90%);"
             imageUrl={item.thumbnail}
             alt={item.name}
             link={`${baseEndpoint}/characters/slug/${item.slug}`}
-            size="12"
+            size="size-14"
           />
         );
       })
