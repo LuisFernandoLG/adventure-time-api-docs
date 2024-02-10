@@ -1,10 +1,10 @@
 <div class="mt-10 py-20 mx-auto text-center bg-gray-800 flex flex-col gap-5">
   <ul class="flex gap-5 justify-center">
-    <li class="text-white font-bold uppercase">characters: xxx</li>
+    <li class="text-white font-bold uppercase">characters: <span class="character-count">xxx</span></li>
 
-    <li class="text-white font-bold uppercase">Locations: xxx</li>
+    <li class="text-white font-bold uppercase">Kingdoms: <span class="location-count">xxx</span></li>
 
-    <li class="text-white font-bold uppercase">Episodes: xxx</li>
+    <li class="text-white font-bold uppercase">Episodes: <span class="episode-count">xxx</span></li>
   </ul>
   <div class="uppercase text-white flex justify-center items-center gap-2">
     <span>Server Status</span>
@@ -21,25 +21,41 @@
 </div>
 
 <script>
-  const url = `${import.meta.env.PUBLIC_API_URL}/apiV1/status`;
+  const baseUrl = `${import.meta.env.PUBLIC_API_URL}`;
   const $spanServerStatus = document.getElementById("status");
+  const $spanCharacterCount = document.querySelector(".character-count");
+  const $spanLocationCount = document.querySelector(".location-count");
+  const $spanEpisodeCount = document.querySelector(".episode-count");
 
   document.addEventListener("DOMContentLoaded", async () => {
     try {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-      });
+      const response = await fetch(`${baseUrl}/apiV1/status`);
+
+      const data_count_response = await fetch(
+        `${import.meta.env.PUBLIC_API_URL}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+          },
+        }
+      );
+
+      const response_info = await data_count_response.json();
+
+      const { characters, kingdoms, episodes } = response_info.data_count;
+
+      if($spanCharacterCount) $spanCharacterCount.textContent = characters || "xxx";
+      if($spanLocationCount) $spanLocationCount.textContent = kingdoms || "xxx";
+      if($spanEpisodeCount) $spanEpisodeCount.textContent = episodes || "xxx";
+      
 
       if ($spanServerStatus?.classList) {
         $spanServerStatus.classList.remove("bg-slate-400");
         $spanServerStatus.classList.add("bg-green-400");
       }
     } catch (error) {
-      console.log({ error });
       alert(JSON.stringify(error, null, 2));
       if ($spanServerStatus?.classList) {
         $spanServerStatus.classList.remove("bg-slate-400");
